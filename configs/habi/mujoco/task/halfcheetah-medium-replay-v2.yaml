@@ -1,0 +1,4 @@
+env_name: "halfcheetah-medium-replay-v2"
+max_path_length: 1000
+
+eta: 0

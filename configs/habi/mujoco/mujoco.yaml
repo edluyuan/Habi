@@ -1,0 +1,73 @@
+defaults:
+  - _self_
+  - task: halfcheetah-medium-expert-v2
+
+pipeline_name: habi_d4rl_mujoco
+mode: train
+seed: 0
+device: cuda:0
+project: Habi
+group: release
+name: Default
+enable_wandb: 1
+save_dir: results
+
+latent_dim: 256
+deterministic_latent: 0
+planner_input_type: state
+reconstruct_eta: 0
+learn_kl_eta: 1
+kl_eta: 1.0
+dql_use_diffusion: 1
+
+# Environment
+normalize_reward: True
+discount: 0.99
+
+# Actor
+dql_solver: ddpm
+dql_diffusion_steps: 5
+dql_sampling_steps: 5
+dql_predict_noise: True
+dql_ema_rate: 0.995
+policy_learning_rate: 0.0003
+
+# Critic
+dql_hidden_dim: 256
+critic_learning_rate: 0.0003
+
+# Training
+gradient_steps: 1000000
+bb_ckpt: 1000000
+batch_size: 256
+ema_update_interval: 5
+log_interval: 1000
+save_interval: 40000
+uncondition_sample_ratio: 10
+
+# Inference
+dql_ckpt: latest
+num_envs: 50
+num_episodes: 3
+planner_num_candidates: 50
+bb_num_candidates: 5
+dql_temperature: 0.5
+dql_use_ema: True
+
+use_pretrained_dql_critic: 2
+sigma_threshold: 0.1
+learn_dv_value: 1
+kld_target: 1
+use_random_imitation: 0
+dataset_type: td
+model_type: bb # bb, bbseq
+conditional_decoder: 0
+
+# for distill
+mlp_hidden_depth: 1
+
+# hydra
+hydra:
+  job:
+    chdir: false
+

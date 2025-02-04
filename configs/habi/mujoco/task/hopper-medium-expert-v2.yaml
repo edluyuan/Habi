@@ -1,0 +1,4 @@
+env_name: "hopper-medium-expert-v2"
+max_path_length: 1000
+
+eta: 0
