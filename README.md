@@ -3,15 +3,15 @@
 
 <p align="center">
 ·
-Paper
+<a href="https://arxiv.org/abs/2502.06401">Paper</a>
 ·
-<a href="#">Code</a>
+<a href="https://github.com/BayesBrain/Habi">Code</a>
 ·
 <a href="https://bayesbrain.github.io/">Webpage</a>
 ·
 </p>
 
-This repository contains the PyTorch implementation of *"Habitizing Diffusion Planning for Efficient and Effective Decision Making."*
+This repository contains the PyTorch implementation of *"Habitizing Diffusion Planning for Efficient and Effective Decision Making."* (ICML 2025)
 
 <p align="center">
     <br>
